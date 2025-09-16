@@ -1,6 +1,26 @@
 
 
-export default function SongTitle({ title = "Tidal Drift", subtitle = "Echoes of the Sea" }) {
+import React, { useEffect, useState } from "react";
+
+export default function SongTitle({ songId = "hdees11mmk6g078ewijlly1r" }) {
+	const [title, setTitle] = useState("");
+	const [subtitle, setSubtitle] = useState("");
+
+	useEffect(() => {
+		async function fetchSong() {
+			try {
+				const res = await fetch(`/api/v1/songs/${songId}`);
+				const data = await res.json();
+				setTitle(data.title || "");
+				setSubtitle(data.artist || "");
+			} catch (e) {
+				setTitle("Unknown Title");
+				setSubtitle("Unknown Artist");
+			}
+		}
+		fetchSong();
+	}, [songId]);
+
 	return (
 		<div>
 			<h1 className="text-3xl font-bold text-gray-900">{title}</h1>
