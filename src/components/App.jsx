@@ -5,6 +5,8 @@ import MusicPlayer from "./MusicPlayer";
 import PlayControls from "./PlayControls";
 import SongTitle from "./SongTitle";
 import VolumeControls from "./VolumeControls";
+import PlayListItem from "./PlayListItem";
+import CurrentlyPlaying from "./CurrentlyPlaying";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <SongTitle />
       <PlayControls />
       <VolumeControls />
+      <PlayListItem />
+      <CurrentlyPlaying />
       <Footer />
     </div>
   );
