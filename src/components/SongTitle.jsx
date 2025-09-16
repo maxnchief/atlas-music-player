@@ -1,7 +1,5 @@
 
 
-import React, { useEffect, useState } from "react";
-
 export default function SongTitle({ songId = "" }) {
 	const [title, setTitle] = useState("");
 	const [subtitle, setSubtitle] = useState("");
@@ -9,10 +7,11 @@ export default function SongTitle({ songId = "" }) {
 	useEffect(() => {
 		async function fetchSong() {
 			try {
-				const res = await fetch(`/api/v1/songs/${songId}`);
+				const res = await fetch(`/api/v1/playlist`);
 				const data = await res.json();
-				setTitle(data.title || "");
-				setSubtitle(data.artist || "");
+				const song = Array.isArray(data) ? data.find(s => s.id === songId) : null;
+				setTitle(song?.title || "Unknown Title");
+				setSubtitle(song?.artist || "Unknown Artist");
 			} catch (e) {
 				setTitle("Unknown Title");
 				setSubtitle("Unknown Artist");

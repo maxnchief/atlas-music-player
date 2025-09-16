@@ -8,7 +8,7 @@ function formatDuration(seconds) {
 	return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-export default function Playlist({ selectedId = "soammx6oibpan244my4toqke" }) {
+export default function Playlist({ selectedId, setSelectedId }) {
 	const [songs, setSongs] = useState([]);
 
 	useEffect(() => {
@@ -28,20 +28,19 @@ export default function Playlist({ selectedId = "soammx6oibpan244my4toqke" }) {
 		<div className="w-full">
 			<div className="text-2xl font-bold text-gray-900 mb-4">Playlist</div>
 			{songs.map((song) => (
-				<div
+				<button
 					key={song.id}
-					className={
-						song.id === selectedId
-							? "bg-gray-100 rounded-lg"
-							: ""
-					}
+					className={`w-full text-left focus:outline-none ${
+						song.id === selectedId ? "bg-gray-100 rounded-lg" : ""
+					}`}
+					onClick={() => setSelectedId(song.id)}
 				>
 					<PlayListItem
 						title={song.title}
 						artist={song.artist}
 						duration={formatDuration(song.duration)}
 					/>
-				</div>
+				</button>
 			))}
 		</div>
 	);
