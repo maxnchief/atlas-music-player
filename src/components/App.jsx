@@ -7,6 +7,7 @@ import SongTitle from "./SongTitle";
 import VolumeControls from "./VolumeControls";
 import PlayListItem from "./PlayListItem";
 import CurrentlyPlaying from "./CurrentlyPlaying";
+import Playlist from "./Playlist";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <VolumeControls />
       <PlayListItem />
       <CurrentlyPlaying />
+      <Playlist />
       <Footer />
     </div>
   );

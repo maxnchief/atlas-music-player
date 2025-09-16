@@ -1,6 +1,6 @@
 
 
-export default function PlayListItem({ title = "Electric Fever", artist = "Neon Jungle", duration = "8:41" }) {
+export default function PlayListItem({ title = "", artist = "", duration = "" }) {
 	return (
 		<div className="flex items-start justify-between py-2 px-4 w-full">
 			<div>
