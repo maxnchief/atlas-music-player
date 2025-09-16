@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CurrentlyPlaying from "./CurrentlyPlaying";
 import Playlist from "./Playlist";
 
 export default function MusicPlayer() {
-  const [selectedId, setSelectedId] = useState("soammx6oibpan244my4toqke");
+  const [selectedId, setSelectedId] = useState("");
+
+  useEffect(() => {
+    async function fetchPlaylist() {
+      try {
+        const res = await fetch("/api/v1/playlist");
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          setSelectedId(data[0].id);
+        }
+      } catch (e) {
+        setSelectedId("");
+      }
+    }
+    fetchPlaylist();
+  }, []);
 
   return (
     <div className="flex flex-col md:flex-row gap-8 w-full">

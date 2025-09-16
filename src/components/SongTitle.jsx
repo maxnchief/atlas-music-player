@@ -1,5 +1,7 @@
 
 
+import React, { useEffect, useState } from "react";
+
 export default function SongTitle({ songId = "" }) {
 	const [title, setTitle] = useState("");
 	const [subtitle, setSubtitle] = useState("");
