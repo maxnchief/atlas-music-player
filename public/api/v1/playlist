@@ -4,69 +4,88 @@
         "title": "Painted in Blue",
         "artist": "Soul Canvas",
         "genre": "Neo-Soul",
-        "duration": 194
+        "duration": 194,
+        "cover": "https://utfs.io/f/E9fJnaKtTy1bV09oPkISuh6fWpNsTRlAk1Qj9yqnVzCi32BL"
+
     },
     {
         "id": "soammx6oibpan244my4toqke",
         "title": "Tidal Drift",
         "artist": "Echoes of the Sea",
         "genre": "Ambient",
-        "duration": 191
+        "duration": 191,
+        "cover": "https://utfs.io/f/E9fJnaKtTy1bOclGsk1hB7xMLwUVFDiXypZukQrcnYbgdEv6"
+
     },
     {
         "id": "a6pkp78whsyqdvpb5dxn64ss",
         "title": "Fading Shadows",
         "artist": "The Emberlight",
         "genre": "Alternative Rock",
-        "duration": 194
+        "duration": 194,
+        "cover": "https://utfs.io/f/E9fJnaKtTy1bC8yQiDcTqKW7UiwylQEbSP6GY0BaMDrVn4t5"
+
     },
     {
         "id": "hdees11mmk6g078ewijlly1r",
         "title": "Cosmic Drift",
         "artist": "Solar Flare",
         "genre": "Psychedelic Rock",
-        "duration": 240
+        "duration": 240,
+        "cover": "https://utfs.io/f/E9fJnaKtTy1bdFkaBz4G9CJywD7oVn1hRLQAuEbf8xqkt34N"
+
     },
     {
         "id": "sg9obf34n8qtnpq5t19w1b9a",
         "title": "Urban Serenade",
         "artist": "Midnight Groove",
         "genre": "Jazz/Funk",
-        "duration": 162
+        "duration": 162,
+        "cover": "https://utfs.io/f/E9fJnaKtTy1bRrer7odlXJ7gkU9pOS36sIbA1vBViucmwjyN"
+
     },
     {
         "id": "u7wkgyiyiz7xuxcueoxzb5d5",
         "title": "Whispers in the Wind",
         "artist": "Rust & Ruin",
         "genre": "Folk",
-        "duration": 230
+        "duration": 230,
+        "cover": "https://utfs.io/f/E9fJnaKtTy1b0N9zurCYB1gk62ReoSDdcKnwOZbaUyqujE4p"
+
     },
     {
         "id": "kp4z671fsjcmuobji96z6p95",
         "title": "Electric Fever",
         "artist": "Neon Jungle",
         "genre": "EDM",
-        "duration": 141
+        "duration": 141,
+        "cover": "https://utfs.io/f/E9fJnaKtTy1bURbS73joMSlobh6pidjcfyXRZvrWLnewCuVz"
+
     },
     {
         "id": "ycvdpo1n76ap0x2u67gy9gab",
         "title": "Electric Wildflower",
         "artist": "Velvet Ember",
         "genre": "Indie Pop",
-        "duration": 179
+        "duration": 179,
+        "cover": "https://utfs.io/f/E9fJnaKtTy1bgUYJxLRHtQnU93BlJCuMbwphd17cmE6AYKrq"
+
     },
     {
         "id": "jxjrthcu47rrpan548evirgu",
         "title": "Golden Haze",
         "artist": "Velvet Waves",
         "genre": "Indie Pop",
-        "duration": 155
+        "duration": 155,
+        "cover": "https://utfs.io/f/E9fJnaKtTy1bnvBsFg9ld0pImEuojVYae3JSrFsGOciHWzq2"
+
     },
     {
         "id": "kjy3ny0k1jt9p83srhdyg7mb",
         "title": "Shatter the Silence",
         "artist": "Thunderclap Echo",
         "genre": "Rock",
-        "duration": 224
+        "duration": 224,
+        "cover":"https://utfs.io/f/E9fJnaKtTy1bTqyt3tklYE5bPnNGfTwAxKoIdic9DgvVBmSr"
     }
 ]

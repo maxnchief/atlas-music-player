@@ -21,7 +21,7 @@ export default function MusicPlayer() {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 w-full">
+    <div className="flex bg-midnight border border-tahiti flex-col md:flex-row gap-8 w-full">
       <div className="flex-1">
         <CurrentlyPlaying songId={selectedId} />
       </div>

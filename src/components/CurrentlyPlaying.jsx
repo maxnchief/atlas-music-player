@@ -6,7 +6,7 @@ import VolumeControls from "./VolumeControls";
 
 export default function CurrentlyPlaying({ songId }) {
 	return (
-		<div className="flex flex-col items-center w-full p-6 bg-white rounded-lg shadow">
+		<div className="flex flex-col items-center w-full p-6   shadow">
 			<CoverArt />
 			<div className="mt-6 w-full flex flex-col items-start">
 				<SongTitle songId={songId} />

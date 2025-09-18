@@ -25,13 +25,13 @@ export default function Playlist({ selectedId, setSelectedId }) {
 	}, []);
 
 	return (
-		<div className="w-full">
-			<div className="text-2xl font-bold text-gray-900 mb-4">Playlist</div>
+		<div className="w-full border-l border-tahiti bg-midnight">
+			<div className="text-2xl font-bold ml-2.5  text-gray-200 mb-4">Playlist</div>
 			{songs.map((song) => (
 				<button
 					key={song.id}
 					className={`w-full text-left focus:outline-none ${
-						song.id === selectedId ? "bg-gray-100 rounded-lg" : ""
+						song.id === selectedId ? "bg-tahiti rounded-lg  " : ""
 					}`}
 					onClick={() => setSelectedId(song.id)}
 				>
