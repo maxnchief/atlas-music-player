@@ -25,7 +25,7 @@ export default function Playlist({ selectedId, setSelectedId }) {
 	}, []);
 
 	return (
-		<div className="w-full border-l border-tahiti bg-midnight">
+		<div className="w-full border-l border-tahiti ">
 			<div className="text-2xl font-bold ml-2.5  text-gray-200 mb-4">Playlist</div>
 			{songs.map((song) => (
 				<button

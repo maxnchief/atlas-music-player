@@ -1,12 +1,13 @@
-import placeholder from '../assets/placeholder.svg';
+import cover from '../../images/cover.png';
+
 
 export default function CoverArt() {
 	return (
-		<div class="">
+		<div className="">
 			<img
-				src={placeholder}
-				alt="Cover Art Placeholder"
-				class=""
+				src={cover}
+				alt="Cover Art"
+				className=""
 			/>
 		</div>
 	);

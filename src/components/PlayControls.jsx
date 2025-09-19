@@ -5,7 +5,7 @@ import { Rewind, Play, FastForward, Shuffle } from "lucide-react";
 
 export default function PlayControls() {
 	return (
-		<div className="flex items-center justify-between w-full px-8 py-4 bg-midnight">
+		<div className="flex items-center justify-between w-full px-8 py-4 ">
 			{/* Speed */}
 			<span className="text-xl font-bold text-burntorange">1x</span>
 
