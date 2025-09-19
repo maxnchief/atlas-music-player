@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "./Footer";
 import MusicPlayer from "./MusicPlayer";
 import DarkModeButton from "./DarkModeButton";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
