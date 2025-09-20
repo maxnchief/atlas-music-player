@@ -23,12 +23,13 @@ export default function CoverArt({ songId }: CoverArtProps) {
 	}, [songId]);
 
 	return (
-		<div className="flex items-center justify-center w-full h-full bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
-			<img
-				src={cover}
-				alt="Cover Art"
-				className="object-contain w-64 h-64 md:w-80 md:h-80 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-900"
-			/>
-		</div>
+			<div className="w-full h-full rounded-lg overflow-hidden">
+				<img
+					src={cover}
+					alt="Cover Art"
+					className="w-full h-full object-cover rounded-lg border border-gray-300 dark:border-gray-700"
+					style={{ display: "block" }}
+				/>
+			</div>
 	);
 }
