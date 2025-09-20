@@ -1,5 +1,12 @@
 
-export default function DarkModeButton({ darkMode, setDarkMode }) {
+import React from "react";
+
+interface DarkModeButtonProps {
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const DarkModeButton: React.FC<DarkModeButtonProps> = ({ darkMode, setDarkMode }) => {
   return (
     <div className="flex justify-center my-6">
       <button
@@ -10,4 +17,6 @@ export default function DarkModeButton({ darkMode, setDarkMode }) {
       </button>
     </div>
   );
-}
+};
+
+export default DarkModeButton;

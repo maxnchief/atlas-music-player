@@ -1,13 +1,18 @@
 
+import React from "react";
 import CoverArt from "./CoverArt";
 import SongTitle from "./SongTitle";
 import PlayControls from "./PlayControls";
 import VolumeControls from "./VolumeControls";
 
-export default function CurrentlyPlaying({ songId }) {
+interface CurrentlyPlayingProps {
+	songId: string;
+}
+
+const CurrentlyPlaying: React.FC<CurrentlyPlayingProps> = ({ songId }) => {
 	return (
-		<div className="flex flex-col items-center w-full p-6   shadow">
-			<CoverArt />
+		<div className="flex flex-col items-center w-full p-6 shadow">
+			<CoverArt songId={songId} />
 			<div className="mt-6 w-full flex flex-col items-start">
 				<SongTitle songId={songId} />
 			</div>
@@ -19,4 +24,6 @@ export default function CurrentlyPlaying({ songId }) {
 			</div>
 		</div>
 	);
-}
+};
+
+export default CurrentlyPlaying;
