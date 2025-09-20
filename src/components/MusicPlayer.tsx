@@ -5,7 +5,7 @@ import LoadingSkeleton from "./LoadingSkeleton";
 
 const MusicPlayer: React.FC = () => {
   const [playlist, setPlaylist] = useState<any[]>([]);
-  const [selectedId, setSelectedId] = useState<string>("");
+  const [currentSongIndex, setCurrentSongIndex] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -16,14 +16,14 @@ const MusicPlayer: React.FC = () => {
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {
           setPlaylist(data);
-          setSelectedId(data[0].id);
+          setCurrentSongIndex(0);
         } else {
           setPlaylist([]);
-          setSelectedId("");
+          setCurrentSongIndex(0);
         }
       } catch (e) {
         setPlaylist([]);
-        setSelectedId("");
+        setCurrentSongIndex(0);
       } finally {
         setLoading(false);
       }
@@ -35,15 +35,26 @@ const MusicPlayer: React.FC = () => {
     return <div className="flex w-full h-full items-center justify-center"><LoadingSkeleton /></div>;
   }
 
-  const currentSong = playlist.find(song => song.id === selectedId) || playlist[0];
+  const currentSong = playlist[currentSongIndex] || null;
 
   return (
-    <div className="flex border border-tahiti flex-col md:flex-row gap-8 w-full">
+  <div className="flex border border-tahiti flex-col md:flex-row gap-8 w-full min-w-[320px] min-h-screen">
       <div className="flex-1">
-        <CurrentlyPlaying songId={currentSong?.id || ""} />
+        <CurrentlyPlaying
+          songId={currentSong?.id || ""}
+          playlist={playlist}
+          currentSongIndex={currentSongIndex}
+          setCurrentSongIndex={setCurrentSongIndex}
+        />
       </div>
       <div className="flex-1">
-        <Playlist selectedId={selectedId} setSelectedId={setSelectedId} />
+        <Playlist
+          selectedId={currentSong?.id || ""}
+          setSelectedId={id => {
+            const idx = playlist.findIndex(song => song.id === id);
+            if (idx !== -1) setCurrentSongIndex(idx);
+          }}
+        />
       </div>
     </div>
   );

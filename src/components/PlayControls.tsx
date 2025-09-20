@@ -4,15 +4,16 @@
 import React from "react";
 import { Rewind, Play, Pause, FastForward, Shuffle } from "lucide-react";
 
-const PlayControls: React.FC = () => {
-		// Props for playback control
-		// These should be passed from parent: playlist, currentSongIndex, isPlaying, onPlayPause, onPrev, onNext, shuffle, onShuffle, speed, onSpeedChange
-		// For demo, use local state
+interface PlayControlsProps {
+	playlist: any[];
+	currentSongIndex: number;
+	setCurrentSongIndex: (idx: number) => void;
+}
+
+const PlayControls: React.FC<PlayControlsProps> = ({ playlist, currentSongIndex, setCurrentSongIndex }) => {
 		const [speed, setSpeed] = React.useState<number>(1);
 		const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
 		const [shuffle, setShuffle] = React.useState<boolean>(false);
-		const [currentSongIndex, setCurrentSongIndex] = React.useState<number>(0);
-		const [playlist, setPlaylist] = React.useState<string[]>(["Song 1", "Song 2", "Song 3"]); // Replace with real song objects
 
 		const speeds = [0.5, 1, 2];
 		const handleSpeedClick = () => {
@@ -26,11 +27,13 @@ const PlayControls: React.FC = () => {
 			// Call parent onPlayPause if needed
 		};
 
+
 		const handlePrev = () => {
 			if (currentSongIndex > 0) {
 				setCurrentSongIndex(currentSongIndex - 1);
+			} else if (playlist.length > 0) {
+				setCurrentSongIndex(playlist.length - 1);
 			}
-			// Call parent onPrev if needed
 		};
 
 		const handleNext = () => {
@@ -42,8 +45,9 @@ const PlayControls: React.FC = () => {
 				setCurrentSongIndex(nextIdx);
 			} else if (currentSongIndex < playlist.length - 1) {
 				setCurrentSongIndex(currentSongIndex + 1);
+			} else if (playlist.length > 0) {
+				setCurrentSongIndex(0);
 			}
-			// Call parent onNext if needed
 		};
 
 		const handleShuffle = () => {
@@ -68,7 +72,7 @@ const PlayControls: React.FC = () => {
 					className={`focus:outline-none ${currentSongIndex === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
 					type="button"
 					onClick={handlePrev}
-					disabled={currentSongIndex === 0}
+					disabled={playlist.length === 0}
 					aria-label="Previous song"
 				>
 					<Rewind size={32} strokeWidth={2.5} className="text-burntorange" />
@@ -93,7 +97,7 @@ const PlayControls: React.FC = () => {
 					className={`focus:outline-none ${(currentSongIndex === playlist.length - 1 && !shuffle) ? "opacity-50 cursor-not-allowed" : ""}`}
 					type="button"
 					onClick={handleNext}
-					disabled={currentSongIndex === playlist.length - 1 && !shuffle}
+					disabled={playlist.length === 0}
 					aria-label="Next song"
 				>
 					<FastForward size={32} strokeWidth={2.5} className="text-burntorange" />
