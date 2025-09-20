@@ -8,14 +8,26 @@ interface PlayControlsProps {
 	playlist: any[];
 	currentSongIndex: number;
 	setCurrentSongIndex: (idx: number) => void;
+	isPlaying: boolean;
+	setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+	speed: number;
+	setSpeed: React.Dispatch<React.SetStateAction<number>>;
+	shuffle: boolean;
+	setShuffle: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const PlayControls: React.FC<PlayControlsProps> = ({ playlist, currentSongIndex, setCurrentSongIndex }) => {
-		const [speed, setSpeed] = React.useState<number>(1);
-		const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
-		const [shuffle, setShuffle] = React.useState<boolean>(false);
-
-		const speeds = [0.5, 1, 2];
+const PlayControls: React.FC<PlayControlsProps> = ({
+	playlist,
+	currentSongIndex,
+	setCurrentSongIndex,
+	isPlaying,
+	setIsPlaying,
+	speed,
+	setSpeed,
+	shuffle,
+	setShuffle,
+}) => {
+	const speeds = [0.5, 1, 2];
 		const handleSpeedClick = () => {
 			const currentIdx = speeds.indexOf(speed);
 			const nextIdx = (currentIdx + 1) % speeds.length;
