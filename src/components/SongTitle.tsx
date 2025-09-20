@@ -2,16 +2,20 @@
 
 import React, { useEffect, useState } from "react";
 
-export default function SongTitle({ songId = "" }) {
-	const [title, setTitle] = useState("");
-	const [subtitle, setSubtitle] = useState("");
+interface SongTitleProps {
+	songId: string;
+}
+
+export default function SongTitle({ songId }: SongTitleProps) {
+	const [title, setTitle] = useState<string>("");
+	const [subtitle, setSubtitle] = useState<string>("");
 
 	useEffect(() => {
 		async function fetchSong() {
 			try {
 				const res = await fetch(`/api/v1/playlist`);
 				const data = await res.json();
-				const song = Array.isArray(data) ? data.find(s => s.id === songId) : null;
+				const song = Array.isArray(data) ? data.find((s: any) => s.id === songId) : null;
 				setTitle(song?.title || "Unknown Title");
 				setSubtitle(song?.artist || "Unknown Artist");
 			} catch (e) {
